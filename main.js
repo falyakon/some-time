@@ -42,6 +42,18 @@ gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
 
+// Audio setup
+const audio = document.querySelector('audio');
+let musicStarted = false;
+
+// Start playing music on the first scroll
+window.addEventListener('scroll', () => {
+  if (!musicStarted) {
+    audio.play();
+    musicStarted = true; // Ensure music plays only once
+  }
+});
+
 // Reveal animations
 const revealText = document.querySelectorAll('.reveal');
 
