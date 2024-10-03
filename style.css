@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  display: block;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.4;
+  overflow-x: hidden;
+  font-family: 'IM Fell English', serif;
+  color: white;
+}
+
+body {
+  display: block;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+span:not(.sound) {
+  visibility: hidden
+}
+
+span.sound {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+span i {
+  position: relative;
+  top: 6px;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Reveal */
+.reveal {
+  font-kerning: none;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4), 
+  0px 0px 4px rgba(255, 255, 255, 0.2);
+}
+
+audio {
+  display: none;
+}
+
+:root {
+  --color-bg1: rgb(0, 35, 71);
+  --color-bg2: rgb(0, 51, 102);
+  --color1: 255, 142, 0;
+  --color2: 253, 119, 2;
+  --color3: 255, 80, 3;
+  --color4: 224, 159, 62;
+  --color5: 221, 96, 49;
+  --color-interactive: 236, 109, 0;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -100;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+  transition: filter 0.3s ease;
+}
+
+.gradients-container {
+  filter: url(#goo) blur(40px) ;
+  width: 100%;
+  height: 100%;
+}
+
+.g1 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: center center;
+  animation: moveVertical 30s ease infinite;
+
+  opacity: 1;
+}
+
+.g2 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 20s reverse infinite;
+
+  opacity: 1;
+}
+
+.g3 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 40s linear infinite;
+
+  opacity: 1;
+}
+
+.g4 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 40s ease infinite;
+
+  opacity: 0.7;
+}
+
+.g5 {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: calc(var(--circle-size) * 2);
+  height: calc(var(--circle-size) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 20s ease infinite;
+
+  opacity: 1;
+}
+
+.interactive {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
+
+  opacity: 0.7;
+}
+
+.instruction-message,
+.end-message {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.instruction-message p {
+  font-family: 'IM Fell English', serif !important;
+  font-size: 1.5em;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4), 
+  0px 0px 4px rgba(255, 255, 255, 0.2);
+}
+
+.fas-angles-down {
+  font-size: 1.5em !important;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.end-message i {
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4), 
+  0px 0px 4px rgba(255, 255, 255, 0.2);
+}

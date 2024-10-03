@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>some time</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section>
+      <div class="instruction-message">
+        <p>Fais défiler pour commencer.</p>
+        <span class="sound" style="font-size: 0.8em"><i class="fa-solid fa-volume-high"></i><p>Sound on</p></i></span>
+        <i class="fa-solid fa-angles-down" style="font-size: 1.5em"></i>
+      </div>
+      <div class="container">
+        <p class="reveal">
+          Tout commence par le néant<br />
+          Poitrine brûlée par trou noir béant<br />
+          <span>.</span><br />
+          Dédale de miroirs sans tain<br />
+          Poing ensanglanté en vain<br />
+          Froid qui blanchit les pôles<br />
+          Il pleut sur tes épaules<br />
+          <span>.</span><br />
+          Constellation brune<br />
+          Acrylique sur toile<br />
+          Tu es la lune<br />
+          Et chaque étoile<br />
+          <span>.</span><br />
+          Les alcôves de mon âme<br />
+          Parlent toutes ta langue<br />
+          Mes lèvres disent à ma langue<br />
+          Qu’elle déborde de ton âme<br />
+          <span>.</span><br />
+          Mon âme, ton corps<br />
+          S’éclipsent en digital<br />
+          Ma peau brûle d’eux<br />
+          Mon corps, ton âme<br />
+          <span>.</span><br />
+          Tout commence par le néant<br />
+          Qui embrase un autre flottant
+        </p>
+      </div>
+      <div class="end-message"><i class="fa-solid fa-heart"></i></div>
+    </section>
+    <div class="gradient-bg">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              stdDeviation="10"
+              result="blur"
+            />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
+    </div>
+    <audio controls autoplay loop>
+      <source src="public/sometimes.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
