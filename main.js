@@ -42,28 +42,6 @@ gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
 
-  // Get the audio element
-  const audio = document.getElementById('background-music');
-
-  // Add event listener to play audio on touch or click
-  document.addEventListener('touchstart', () => {
-    audio.play();
-  });
-
-  document.addEventListener('click', () => {
-    audio.play();
-  });
-
-  // Prevents multiple plays if the user taps multiple times quickly
-  audio.addEventListener('play', () => {
-    document.removeEventListener('touchstart', () => {
-      audio.play();
-    });
-    document.removeEventListener('click', () => {
-      audio.play();
-    });
-  });
-  
 // Reveal animations
 const revealText = document.querySelectorAll('.reveal');
 
